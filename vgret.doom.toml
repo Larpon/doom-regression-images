@@ -1,0 +1,16 @@
+# Defaults
+[compare]
+	method = 'idiff'
+	flags = ['-p','-fail 0.001','-failpercent 0.2']
+
+[capture]
+	method = 'generic_screenshot'
+	# wait_ms = X # Wait X amount of milliseconds *after* process start, *before* capturing
+	flags = [] # Flags passed to the *app* e.g.: ['--run-in-background','-d ...'] etc.
+
+# List of apps to run and capture
+# Paths are relative to the vlang/doom repository root
+[[apps]]
+	path = 'chocolate-doom/src/doom/doomv'
+	[apps.capture]
+		wait_ms = 3000 # Luckily DOOM shows a static and fairly long title screen before going into kiosk/menu mode. Thanks Carmack!
