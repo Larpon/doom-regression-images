@@ -13,4 +13,4 @@
 [[apps]]
 	path = 'chocolate-doom/src/doom/doomv'
 	[apps.capture]
-		wait_ms = 4000 # Luckily DOOM shows a static and fairly long title screen before going into kiosk/menu mode. Thanks Carmack!
+		wait_ms = 4500 # Luckily DOOM shows a static and fairly long title screen (~5s) before going into kiosk/menu mode. Thanks Carmack!
