@@ -9,8 +9,13 @@
 	flags = [] # Flags passed to the *app* e.g.: ['--run-in-background','-d ...'] etc.
 
 # List of apps to run and capture
-# Paths are relative to the vlang/doom repository root
 [[apps]]
+    # Paths are relative to the vlang/doom repository root
+    # Capture screen size is 640x480 @ 24bit color depth
 	path = 'chocolate-doom/src/doom/doomv'
-	[apps.capture]
-		wait_ms = 4500 # Luckily DOOM shows a static and fairly long title screen (~5s) before going into kiosk/menu mode. Thanks Carmack!
+    [apps.capture]
+		wait_ms = 30000 # 30 secs. The game *should* have started and reached into kiosk-mode at this point
+		regions = [
+            { x = 450, y = 405, width = 85,  height = 44 } # Red lump to the right, next to the armour level
+            { x = 0,   y = 450, width = 300, height = 30 } # Bottom left UI + shareware text
+        ]
