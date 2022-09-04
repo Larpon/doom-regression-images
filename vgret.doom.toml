@@ -6,7 +6,7 @@
 [capture]
 	method = 'generic_screenshot'
 	# wait_ms = X # Wait X amount of milliseconds *after* process start, *before* capturing
-	flags = [] # Flags passed to the *app* e.g.: ['--run-in-background','-d ...'] etc.
+	flags = ['-testcontrols'] # Flags passed to the *app* e.g.: ['--run-in-background','-d ...'] etc.
 
 # List of apps to run and capture
 [[apps]]
@@ -14,7 +14,7 @@
     # Capture screen size is 640x480 @ 24bit color depth
 	path = 'chocolate-doom/src/doom/doomv'
     [apps.capture]
-		wait_ms = 30000 # 30 secs. The game *should* have started and reached into kiosk-mode at this point
+		wait_ms = 7000 # 7 secs. The game *should* have started and rendered a stable image at this point
 		regions = [
             { x = 450, y = 405, width = 85,  height = 44 } # Red lump to the right, next to the armour level
             { x = 0,   y = 450, width = 300, height = 30 } # Bottom left UI + shareware text
