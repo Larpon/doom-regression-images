@@ -1,3 +1,6 @@
+# NOTE: Paths are relative to the vlang/doom repository root !
+# The capture screen size is 800x600 @ 24bit color depth.
+
 # Defaults
 [compare]
 	method = 'idiff'
@@ -5,17 +8,23 @@
 
 [capture]
 	method = 'generic_screenshot'
-	# wait_ms = X # Wait X amount of milliseconds *after* process start, *before* capturing
+	wait_ms = 5000 # After 5 seconds, the game *should* have started, and rendered a stable image.
 	flags = ['-testcontrols'] # Flags passed to the *app* e.g.: ['--run-in-background','-d ...'] etc.
 
-# List of apps to run and capture
 [[apps]]
-    # Paths are relative to the vlang/doom repository root
-    # Capture screen size is 640x480 @ 24bit color depth
 	path = 'chocolate-doom/src/doom/doomv'
-    [apps.capture]
-		wait_ms = 7000 # 7 secs. The game *should* have started and rendered a stable image at this point
-		regions = [
-            { x = 450, y = 405, width = 85,  height = 44 } # Red lump to the right, next to the armour level
-            { x = 0,   y = 450, width = 300, height = 30 } # Bottom left UI + shareware text
-        ]
+	[apps.capture]
+	regions = [
+		{ x = 0,   y = 0, width = 358, height = 600 } # Left half, not including the doom guy.
+		{ x = 444, y = 0, width = 358, height = 600 } # Right half, not including the doom guy.
+		{ x = 0,   y = 0, width = 800, height = 507 } # Top part, game screen, not including the doom guy.
+	]
+
+[[apps]]
+	path = 'chocolate-doom/src/chocolate-doom'
+	[apps.capture]
+	regions = [
+		{ x = 0,   y = 0, width = 358, height = 600 } # Left half, not including the doom guy.
+		{ x = 444, y = 0, width = 358, height = 600 } # Right half, not including the doom guy.
+		{ x = 0,   y = 0, width = 800, height = 507 } # Top part, game screen, not including the doom guy.
+	]
