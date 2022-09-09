@@ -9,7 +9,7 @@
 [capture]
 	method = 'generic_screenshot'
 	wait_ms = 5000 # After 5 seconds, the game *should* have started, and rendered a stable image.
-	flags = ['-testcontrols'] # Flags passed to the *app* e.g.: ['--run-in-background','-d ...'] etc.
+	flags = ['-testcontrols', '-nosound'] # Flags passed to the *app* e.g.: ['--run-in-background','-d ...'] etc.
 
 [[apps]]
 	path = 'chocolate-doom/src/doom/doomv'
