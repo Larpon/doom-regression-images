@@ -8,7 +8,7 @@
 
 [capture]
 	method = 'generic_screenshot'
-	wait_ms = 5000 # After 5 seconds, the game *should* have started, and rendered a stable image.
+	wait_ms = 7500 # After 7.5 seconds, the game *should* have started, and rendered a stable image.
 	flags = ['-testcontrols', '-nosound', '-iwad', '/home/runner/doom1.wad', '-width', '800']
 
 [[apps]]
